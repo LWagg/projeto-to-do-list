@@ -37,7 +37,7 @@ toDolist.addEventListener('click', event => {
 
 const hideToDos = (toDos, inputValue) => {
     toDos
-        .filter(toDo => !toDo.textContent.includes(inputValue))
+        .filter(toDo => !toDo.textContent.toLowerCase().includes(inputValue))
         .forEach(toDo => {
             toDo.classList.add('hidden')
         })
@@ -45,7 +45,7 @@ const hideToDos = (toDos, inputValue) => {
 
 const showToDos = (toDos, inputValue) => {
     toDos
-        .filter(toDo => toDo.textContent.includes(inputValue))
+        .filter(toDo => toDo.textContent.toLowerCase().includes(inputValue))
         .forEach(toDo => {
             toDo.classList.remove('hidden')
         })
